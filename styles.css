@@ -1,0 +1,179 @@
+/* General styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.contenedor {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "menu"
+        "seccion-principal"
+        "pie-de-pagina";
+    height: 100vh;
+}
+
+nav {
+    grid-area: menu;
+    padding: 10px;
+    background-color: #0E46A3;
+    color: white;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.titulo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+    .contenedor {
+        grid-template-columns: 250px 1fr;
+        grid-template-areas: 
+            "menu seccion-principal"
+            "menu seccion-principal"
+            "menu pie-de-pagina";
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex;
+        justify-content: flex-start;
+        height: 100vh;
+    }
+
+    .menu-items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    nav {
+        justify-content: space-between;
+    }
+
+    .menu-items {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #0E46A3;
+        padding: 10px;
+    }
+
+    .menu-items.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        font-size: 1.5em;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+
+    .cuerpo {
+        margin-top: 60px; /* Ajusta la sección cuerpo cuando el menú está activo */
+        transition: margin-top 0.3s ease;
+    }
+
+    .menu-items.active ~ .cuerpo {
+        margin-top: 260px; /* Desplaza hacia abajo la sección cuerpo cuando el menú se despliega */
+    }
+}
+
+.cuerpo {
+    grid-area: seccion-principal;
+    padding: 10px;
+}
+
+.vehiculos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.catalogo {
+    display: grid;
+    gap: 10px;
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover; /* Asegura que todas las imágenes tengan el mismo tamaño sin deformarse */
+}
+
+.navigation-buttons {
+    margin-top: 10px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .catalogo {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .card {
+        min-width: 100%;
+        justify-content: center;
+    }
+
+    .card img, .card .car, .card button {
+        max-width: 90%; /* Ajusta las imágenes, texto y botón al 90% del ancho de la pantalla */
+        margin: 0 auto;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+    .catalogo {
+        grid-template-columns: repeat(3, 1fr);
+        flex-wrap: wrap;
+    }
+
+    .card {
+        min-width: auto;
+    }
+
+    .navigation-buttons {
+        display: none; /* Oculta los botones de navegación en escritorio */
+    }
+}
+
+footer {
+    grid-area: pie-de-pagina;
+    padding: 10px;
+    background-color: #1E0342;
+    color: white;
+    text-align: center;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Electricars</title>
+</head>
+
+<body>
+    <div class="contenedor">
+        <nav>
+            <div class="titulo">Electricars</div>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                &#9776;
+            </button>
+            <div class="menu-items">
+                <p>Inicio</p>
+                <p>Catálogo</p>
+                <p>Ofertas</p>
+                <p>Contactos</p>
+            </div>
+        </nav>
+        <div class="cuerpo">
+            <section class="vehiculos">
+                <div class="principal">Ordenar por:
+                    <select class="form-select form-select-sm" aria-label="Small select example">
+                        <option selected>Precio</option>
+                        <option value="1">Año</option>
+                        <option value="2">Marca</option>
+                        <option value="3">Modelo</option>
+                    </select>
+                </div>
+
+                <div class="catalogo">
+                    <div class="card">
+                        <img src="assets/imgs/2024DodgeCharger.jpg" alt="Dodge Charger">
+                        <p class="car">Modelo: Dodge Charger</p>
+                        <button>Ver más</button>
+                    </div>
+                    <div class="card">
+                        <img src="assets/imgs/ChevroletBlazer.jpeg" alt="Chevrolet Blazer">
+                        <p class="car">Modelo: Chevrolet Blazer</p>
+                        <button>Ver más</button>
+                    </div>
+                    <div class="card">
+                        <img src="assets/imgs/Citroen.jpg" alt="Citroen">
+                        <p class="car">Modelo: Citroen</p>
+                        <button>Ver más</button>
+                    </div>
+                    <div class="card">
+                        <img src="assets/imgs/CyberTruckMercedes.jpg" alt="Cyber Truck">
+                        <p class="car">Modelo: Cyber Truck</p>
+                        <button>Ver más</button>
+                    </div>
+                    <div class="card">
+                        <img src="assets/imgs/LotusEletreEV.png" alt="Lotus">
+                        <p class="car">Modelo: Lotus</p>
+                        <button>Ver más</button>
+                    </div>
+                    <div class="card">
+                        <img src="assets/imgs/Volvo2024.jpg" alt="Volvo">
+                        <p class="car">Modelo: Volvo</p>
+                        <button>Ver más</button>
+                    </div>
+                </div>
+
+                <!-- Botones para navegar entre vehículos en vista móvil -->
+                <div class="navigation-buttons">
+                    <button id="prevBtn">Anterior</button>
+                    <button id="nextBtn">Siguiente</button>
+                </div>
+            </section>
+        </div>
+        <footer>2024 - Electricars - Todos los Derechos Reservados</footer>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
